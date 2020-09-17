@@ -6,17 +6,12 @@ from security import authenticate, identify
 from resources.user import UserRegister
 from resources.place import Place, PlaceList
 from resources.location import Location, LocationList
-from db import db
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///data.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.secret_key = 'david'
 api = Api(app)
-
-@app.before_first_request
-def create_tables():
-	db.create_all()
 
 jwt = JWT(app, authenticate, identify)
 

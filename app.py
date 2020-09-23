@@ -8,7 +8,7 @@ from security import authenticate, identify
 from resources.user import UserRegister
 from resources.place import Place, PlaceList
 from resources.location import Location, LocationList
-from resources.images import Image
+from resources.image import Image
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', 'sqlite:///data.db') 

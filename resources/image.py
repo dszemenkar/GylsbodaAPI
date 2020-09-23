@@ -1,4 +1,4 @@
-from flask_restful import Resource
+from flask_restful import Resource, reqparse
 from models.image import ImageModel
 
 class Image(Resource):

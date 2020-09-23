@@ -22,7 +22,7 @@ api.add_resource(Place, '/places/<string:name>')
 api.add_resource(PlaceList, '/places')
 api.add_resource(LocationList, '/locations')
 api.add_resource(UserRegister, '/register')
-api.add_resource(UserRegister, '/images')
+api.add_resource(ImageModel, '/images')
 
 if __name__ == '__main__':
 	db.init_app(app)

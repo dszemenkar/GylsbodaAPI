@@ -27,7 +27,7 @@ class PlaceModel(db.Model):
 		self.location_id = location_id
 
 	def json(self):
-		return {'name': self.name, 'desc_sv': self.desc_sv, 'desc_en': self.desc_en, 'desc_de': self.desc_de, 'lat': self.lat, 'lon': self.lon}
+		return {'id': self:id, 'name': self.name, 'desc_sv': self.desc_sv, 'desc_en': self.desc_en, 'desc_de': self.desc_de, 'lat': self.lat, 'lon': self.lon}
 
 	@classmethod
 	def find_by_name(cls, name):

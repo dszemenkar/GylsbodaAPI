@@ -8,6 +8,22 @@ class Place(Resource):
 		type=str,
 		required=True,
 		help="This field cannot be left blank!")
+	parser.add_argument('desc_en',
+		type=str,
+		required=True,
+		help="Hey! You forgot english, mate!")
+	parser.add_argument('desc_de',
+		type=str,
+		required=True,
+		help="Achtung! What about german?")
+	parser.add_argument('lat',
+		type=float,
+		required=True,
+		help="Every place needs a latitude!")
+	parser.add_argument('lon',
+		type=float,
+		required=True,
+		help="Every place needs a longitude!")
 
 	parser.add_argument('location_id',
 		type=int,

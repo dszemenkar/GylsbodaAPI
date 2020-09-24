@@ -29,7 +29,7 @@ class Place(Resource):
 		data = Place.parser.parse_args()
 		print(data['desc_sv'])
 		print(data['desc_en'])
-		place = PlaceModel(name, data['desc_sv'], data['desc_en'], data['desc_de'], data['lat'], data['lon'], data['location_id'])
+		place = PlaceModel(name, data['desc_sv'], data['lat'], data['lon'], data['location_id'])
 		
 		print(place.name)
 		print(place.desc_sv)

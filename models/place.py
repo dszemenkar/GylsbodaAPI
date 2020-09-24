@@ -17,11 +17,11 @@ class PlaceModel(db.Model):
 	location = db.relationship('LocationModel')
 
 
-	def __init__(self, name, desc_sv, lat, lon, location_id):#desc_en, desc_de, lat, lon, location_id):
+	def __init__(self, name, desc_sv, desc_en, desc_de, lat, lon, location_id):
 		self.name = name
 		self.desc_sv = desc_sv
-		#self.desc_en = desc_en
-		#self.desc_de = desc_de
+		self.desc_en = desc_en
+		self.desc_de = desc_de
 		self.lat = lat
 		self.lon = lon
 		self.location_id = location_id

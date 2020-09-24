@@ -27,8 +27,8 @@ class Place(Resource):
 			return {'message': "A place with name '{}' already exists.".format(name)}, 400
 
 		data = Place.parser.parse_args()
-		print(data['desc_sv'])
-		place = PlaceModel(name, data['desc_sv'], data['lat'], data['lon'], data['location_id'])
+		print(data)
+		place = PlaceModel(name, **data)
 		
 		print(place.name)
 		print(place.desc_sv)

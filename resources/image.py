@@ -21,7 +21,7 @@ class Image(Resource):
 	def post(self):
 	#	if ImageModel.find_by_id(_id):
 	#		return {'message': "An image with id '{}' already exists.".format(_id)}, 400
-		data = Place.parser.parse_args()
+		data = Image.parser.parse_args()
 
 		image = ImageModel(**data)
 		try:

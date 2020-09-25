@@ -3,7 +3,7 @@ from models.image import ImageModel
 
 class Image(Resource):
 	parser = reqparse.RequestParser()
-		parser.add_argument('url',
+	parser.add_argument('url',
 		type=str,
 		required=True,
 		help="This field cannot be left blank!")
@@ -20,8 +20,6 @@ class Image(Resource):
 		return {'message': 'image not found'}, 404
 
 	def post(self):
-	#	if ImageModel.find_by_id(_id):
-	#		return {'message': "An image with id '{}' already exists.".format(_id)}, 400
 		data = Image.parser.parse_args()
 
 		print(data)

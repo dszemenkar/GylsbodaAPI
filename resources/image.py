@@ -3,14 +3,15 @@ from models.image import ImageModel
 
 class Image(Resource):
 	parser = reqparse.RequestParser()
+		parser.add_argument('url',
+		type=str,
+		required=True,
+		help="This field cannot be left blank!")
+
 	parser.add_argument('place_id',
 		type=int,
 		required=True,
 		help="Every image needs a place.")
-	parser.add_argument('url',
-		type=str,
-		required=True,
-		help="This field cannot be left blank!")
 
 	def get(self, place_id):
 		image = ImageModel.find_by_place(place_id)
@@ -22,6 +23,8 @@ class Image(Resource):
 	#	if ImageModel.find_by_id(_id):
 	#		return {'message': "An image with id '{}' already exists.".format(_id)}, 400
 		data = Image.parser.parse_args()
+
+		print(data)
 
 		image = ImageModel(**data)
 		try:

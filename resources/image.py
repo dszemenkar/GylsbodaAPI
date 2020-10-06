@@ -8,21 +8,19 @@ class Image(Resource):
 		required=True,
 		help="This field cannot be left blank!")
 
-	parser.add_argument('place_id',
+	parser.add_argument('product_id',
 		type=int,
 		required=True,
-		help="Every image needs a place.")
+		help="Every image needs a product.")
 
 	def get(self, place_id):
-		image = ImageModel.find_by_place(place_id)
+		image = ImageModel.find_by_place(product_id)
 		if image:
 			return image.json()
 		return {'message': 'image not found'}, 404
 
 	def post(self):
 		data = Image.parser.parse_args()
-
-		print(data)
 
 		image = ImageModel(**data)
 		try:

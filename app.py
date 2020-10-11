@@ -6,8 +6,8 @@ from flask_jwt import JWT
 
 from security import authenticate, identify
 from resources.user import UserRegister
-from resources.place import Place, PlaceList
-from resources.location import Location, LocationList
+from resources.product import Product, ProductList
+from resources.store import Store, StoreList
 from resources.image import Image
 
 app = Flask(__name__)
@@ -18,10 +18,10 @@ api = Api(app)
 
 jwt = JWT(app, authenticate, identify)
 
-api.add_resource(Location, '/locations/<string:name>')
-api.add_resource(Place, '/places/<string:name>')
-api.add_resource(PlaceList, '/places')
-api.add_resource(LocationList, '/locations')
+api.add_resource(store, '/stores/<string:name>')
+api.add_resource(Product, '/products/<string:name>')
+api.add_resource(ProductList, '/products')
+api.add_resource(StoreList, '/stores')
 api.add_resource(UserRegister, '/register')
 api.add_resource(Image, '/images')
 

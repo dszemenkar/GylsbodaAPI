@@ -1,18 +1,18 @@
 from db import db
 
-class StoreModel(db.Model):
-	__tablename__ = 'stores'
+class LocationModel(db.Model):
+	__tablename__ = 'locations'
 
 	id = db.Column(db.Integer, primary_key=True)
 	name = db.Column(db.String(80))
 
-	products = db.relationship('ProductModel', lazy='dynamic')
+	places = db.relationship('PlaceModel', lazy='dynamic')
 
 	def __init__(self, name):
 		self.name = name
 
 	def json(self):
-		return {'name': self.name, 'products': [product.json() for product in self.products.all()]}
+		return {'name': self.name, 'places': [place.json() for place in self.places.all()]}
 
 	@classmethod
 	def find_by_name(cls, name):
